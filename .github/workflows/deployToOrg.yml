@@ -22,7 +22,7 @@ jobs:
       - name: Install Salesforce CLI
         run: |
           npm install @salesforce/cli --global
-          
+
     # Install SVMX CLI
       - name: Install ServiceMax CLI
         run: |
@@ -39,7 +39,7 @@ jobs:
 
     # Authenticate UAT ORG
       - name: 'Authenticate AE2 ORG'
-        run: 'sf org login sfdx-url -f ./SKF_AE2_AUTHURL.txt -a AE2 -d'
+        run: 'sf org login sfdx-url -f ./SKF_AE2_AUTHURL.txt -a SKF_AE2 -d'
  
       # Deploy delta package
       - name: Deploy DIFF package
