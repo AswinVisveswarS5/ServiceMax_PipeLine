@@ -9,8 +9,29 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: DLP-CAP
+    environment: AE2
     steps:
+
+      - name: 'Update Latest Node'
+        uses: actions/setup-node@v1
+        with:
+          node-version: '>=14'
+          check-latest: true
+
+    # Install Salesforce CLI
+      - name: Install Salesforce CLI
+        run: |
+          npm install @salesforce/cli --global
+
+    # Install SVMX CLI
+      - name: Install ServiceMax CLI
+        run: |
+          echo y | sf plugins install svmxc-sf
+
+    # Echo Salesforce confg
+      - name: Check Salesforce CLI config
+        run: 'sf config list'
+
     # Store secret for dev hub
       - name: 'Populate auth file with SKF_AE2_AUTHURL secret'
         shell: bash
@@ -18,7 +39,7 @@ jobs:
 
     # Authenticate UAT ORG
       - name: 'Authenticate AE2 ORG'
-        run: 'sf org login sfdx-url -f ./SKF_AE2_AUTHURL.txt -a AE2 -d'
+        run: 'sf org login sfdx-url -f ./SKF_AE2_AUTHURL.txt -a SKF_AE2 -d'
  
       # Deploy delta package
       - name: Deploy DIFF package
