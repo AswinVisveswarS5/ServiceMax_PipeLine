@@ -1,0 +1,26 @@
+{
+  "name": "AV_DMND0025032_POC_Mapping",
+  "isStandard": false,
+  "developerName": "MAP17277092206451ee1b8f12942081eb74556872ccf6c91",
+  "targetObject": "SVMXC__Service_Order__c",
+  "objectMappingDetails": [
+    {
+      "value": "All Analysis Complete",
+      "targetFieldAPIName": "SVMXC__Order_Status__c",
+      "sourceFldDtaType": "PICKLIST",
+      "parameterType": "Value",
+      "displayValue": "All Analysis Complete",
+      "configurationType": "Value Mapping",
+      "actionType": "Set Value"
+    },
+    {
+      "value": "Test",
+      "targetFieldAPIName": "SVMXC_Subject__c",
+      "sourceFldDtaType": "STRING",
+      "parameterType": "Value",
+      "displayValue": "Test",
+      "configurationType": "Value Mapping",
+      "actionType": "Set Value"
+    }
+  ]
+}
