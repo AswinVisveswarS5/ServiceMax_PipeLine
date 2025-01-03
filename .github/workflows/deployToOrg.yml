@@ -1,9 +1,9 @@
 name: Deploy SVMX to ORG
 
 on:
-  push:
+  pull_request:
     branches:
-      - SandBox_Branch
+      - main
     paths:
       - 'force-app/**'
 jobs:
