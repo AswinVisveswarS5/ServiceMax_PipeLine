@@ -22,12 +22,10 @@ jobs:
       - name: Install Salesforce CLI
         run: |
           npm install @salesforce/cli --global
-          echo y | sf plugins install sfdx-git-delta
-
+          
     # Install SVMX CLI
       - name: Install ServiceMax CLI
         run: |
-          sf plugins install svmxc-sf
           echo y | sf plugins install svmxc-sf
 
     # Echo Salesforce confg
