@@ -28,6 +28,7 @@ jobs:
       - name: Install ServiceMax CLI
         run: |
           npm install -g svmxc-sf
+          sf plugins
 
     # Echo Salesforce confg
       - name: Check Salesforce CLI config
