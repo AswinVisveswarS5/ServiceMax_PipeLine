@@ -1,0 +1,25 @@
+name: Deploy SVMX to ORG
+
+on:
+  push:
+    branches:
+      - SandBox_Branch
+    paths:
+      - 'force-app/**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: DLP-CAP
+    steps:
+    # Store secret for dev hub
+      - name: 'Populate auth file with SKF_AE2_AUTHURL secret'
+        shell: bash
+        run: 'echo ${{ secrets.SKF_AE2_AUTHURL}} > ./SKF_AE2_AUTHURL.txt'
+
+    # Authenticate UAT ORG
+      - name: 'Authenticate AE2 ORG'
+        run: 'sf org login sfdx-url -f ./SKF_AE2_AUTHURL.txt -a AE2 -d'
+ 
+      # Deploy delta package
+      - name: Deploy DIFF package
+        run: 'sf svmxc deploy -o skfdevaswin.visveswar@skf.com  -f'
