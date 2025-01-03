@@ -9,8 +9,30 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: DLP-CAP
+    environment: AE2
     steps:
+
+      - name: 'Update Latest Node'
+        uses: actions/setup-node@v1
+        with:
+          node-version: '>=14'
+          check-latest: true
+
+    # Install Salesforce CLI
+      - name: Install Salesforce CLI
+        run: |
+          npm install @salesforce/cli --global
+          echo y | sf plugins install sfdx-git-delta
+
+    # Install SVMX CLI
+      - name: Install ServiceMax CLI
+        run: |
+          npm install -g svmxc-sf
+
+    # Echo Salesforce confg
+      - name: Check Salesforce CLI config
+        run: 'sf config list'
+
     # Store secret for dev hub
       - name: 'Populate auth file with SKF_AE2_AUTHURL secret'
         shell: bash
