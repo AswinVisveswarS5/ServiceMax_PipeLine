@@ -43,4 +43,4 @@ jobs:
  
       # Deploy delta package
       - name: Deploy DIFF package
-        run: 'sf svmxc retrieve -o skfdevaswin.visveswar@skf.com -t Mapping,Transaction -n MAP17277092206451ee1b8f12942081eb74556872ccf6c91,SFM17277091368967f58129fe7c00c4e6a27390b37e7a127'
+        run: 'sf svmxc deploy -o skfdevaswin.visveswar@skf.com  -f'

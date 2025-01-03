@@ -18,7 +18,7 @@
       "targetFieldAPIName": "SVMXC_Subject__c",
       "sourceFldDtaType": "STRING",
       "parameterType": "Value",
-      "displayValue": "POC Test",
+      "displayValue": "New Test",
       "configurationType": "Value Mapping",
       "actionType": "Set Value"
     }
