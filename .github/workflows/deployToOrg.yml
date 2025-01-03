@@ -43,4 +43,4 @@ jobs:
  
       # Deploy delta package
       - name: Deploy DIFF package
-        run: 'sf svmxc deploy -o skfdevaswin.visveswar@skf.com  -f'
+        run: 'sf svmxc deploy -o skfdevaswin.visveswar@skf.com  -f -n SFM17277091368967f58129fe7c00c4e6a27390b37e7a127'
